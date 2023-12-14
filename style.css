@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Rubik';
+}
+
+.container {
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    background:hsl(228, 33%, 97%);
+}
+
+.comments-section {
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-top:50px;
+    width:60%;
+    height:69.5%;
+    overflow: auto;
+}
+
+.comments-section::-webkit-scrollbar {
+    display:none;
+}
+
+.comment {
+    display:flex;
+    background-color:#fff;
+    padding:25px;
+    gap:25px;
+    border-radius:15px;
+}
+
+.comment-info {
+    flex:1;
+}
+
+.voting {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    background-color:hsl(228, 33%, 97%);
+    align-self:flex-start;
+    padding: 15px 0;
+    width:50px;
+    border-radius:12px;
+}
+
+.reply:active img, .delete:active img, .edit:active img {
+    opacity:.5;
+}
+
+.voting-counter {
+    color:hsl(238, 40%, 52%);
+    font-size:1.1rem;
+    font-weight:600;
+}
+
+.comment-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.user-info {
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.user-info img {
+    width:38px;
+    height:38px;
+}
+
+.username {
+    font-size:1.2rem;
+    font-weight:500;
+}
+
+.time {
+    font-size:1.1rem;
+    font-weight:400;
+    color: hsl(211, 10%, 45%);
+}
+
+.reply, .plus, .minus, .delete, .edit {
+    cursor:pointer;
+}
+
+.reply-label, .delete-label, .edit-label {
+    font-weight:700;
+    font-size:1.1rem;
+    display:inline-block;
+    margin-left:5px;
+    color: hsl(238, 40%, 52%);
+}
+
+.reply:active .reply-label, .delete:active .delete-label,
+.edit:active .edit-label {
+    opacity:.5;
+}
+
+.comment-text {
+    color: hsl(211, 10%, 45%);
+    line-height:27px;
+    font-size:1.05rem;
+}
+
+.send-comment, .reply-comment {
+    background-color:#fff;
+    padding:25px;
+    border-radius:15px;
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+    position:absolute;
+    bottom:10px;
+}
+
+.reply-comment {
+    position:static;
+    margin-top:0px; 
+}
+
+.replied-comment {
+    margin-left:100px;
+}
+
+.your-image, .send-btn-container {
+    align-self:flex-start;
+}
+
+.your-image img {
+    width:45px;
+    height:45px;
+}
+
+#comment-field, #reply-comment-field, #update-field {
+    width:540px;
+    padding:20px 30px;
+    border:1px solid  hsl(223, 19%, 93%);
+    border-radius:12px;
+    font-size:1.1rem;
+    font-weight:400;
+    resize:none;
+}
+
+#comment-field:focus, 
+#reply-comment-field:focus,
+#update-field:focus {
+    outline:1px solid hsl(238, 40%, 52%);
+}
+
+.send-btn, .reply-comment-btn, .update-btn {
+    font-size:1.2rem;
+    padding:.65em 1.4em;
+    border-radius:10px;
+    border:none;
+    color:#fff;
+    background-color:hsl(238, 40%, 52%);
+    cursor:pointer;
+}
+
+.send-btn:active, 
+.reply-comment-btn:active,
+.update-btn:active {
+    opacity:.5;
+}
+
+.you {
+    background-color:hsl(238, 40%, 52%);
+    color:#fff;
+    padding: 4px 10px;
+    border-radius:5px;
+    font-size:1.1rem;
+}
+
+.edit-delete-container {
+    display:flex;
+    gap:30px;
+}
+
+.delete-label {
+    color:hsl(358, 79%, 66%);
+}
+
+.replied-username {
+    color:hsl(238, 40%, 52%);
+    font-weight:500;
+}
+
+.delete-message-container {
+    position: absolute;
+    z-index:999;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    display:none;
+    align-items:center;
+    justify-content: center;
+    background-color:   rgb(50, 65, 82, .3);
+}
+
+.delete-message-show {
+    display:flex;
+}
+
+.delete-message {
+    width:30%;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    background:#fff;
+    padding:2em;
+    border-radius:15px;
+}
+
+.delete-message h3 {
+    font-size:1.6rem;
+    color: hsl(212, 24%, 26%);
+    font-weight:500;
+}
+
+.delete-message p {
+    font-size:1.03rem;
+    color: hsl(211, 10%, 45%);
+}
+
+.btn {
+    padding:.7em 1.8em;
+    font-size:1rem;
+    border:none;
+    font-weight:600;
+    color:#fff;
+    border-radius:5px;
+    text-transform:uppercase;
+    cursor:pointer;
+}
+
+#cancel-btn {
+    background-color: hsl(211, 10%, 45%);
+}
+
+#delete-btn {
+    background-color:  hsl(358, 79%, 66%);
+}
+
+.update-btn-container {
+    text-align:end;
+    display:none;
+}
+
+.update-btn-container-show {
+    display:block;
+}
